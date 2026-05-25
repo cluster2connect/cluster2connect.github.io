@@ -10,17 +10,11 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+
+  background: #0f172a; /* dark blue premium background */
   color: #fff;
-
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.85)
-    ),
-    url('images/train.jpg');
-
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /* =========================
