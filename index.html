@@ -2,75 +2,107 @@
 <html>
 <head>
   <title>Cluster Connect Solutions</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      background: #020617;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      background: #334155;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png">
-    <span>Cluster Connect</span>
-  </div>
-
+<header>
+  <h1>Cluster Connect Solutions</h1>
   <nav>
     <a href="index.html">Home</a>
-    <a href="trainings.html">Trainings</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="#services">Services</a>
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Empowering Careers with IT Training</h1>
-  <p>Industry-focused training & real-time project experience</p>
-  <a href="trainings.html" class="btn">Explore Trainings</a>
+<section id="home">
+  <h2>Welcome</h2>
+  <p>Your gateway to training, internships, and placements</p>
 </section>
 
-<!-- SERVICES -->
-<section class="section">
+<section id="services">
   <h2>Our Services</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Internship</h3>
-      <p>Real time Internship programs from top companies.</p>
+  <div class="services-container">
+
+    <div class="service-card" onclick="goToService('internship')">
+      Internship
     </div>
 
-    <div class="card">
-      <h3>Project</h3>
-      <p>Real-time college project guidence and support for Final year students.</p>
+    <div class="service-card" onclick="goToService('trainings')">
+      Trainings
     </div>
 
-    <div class="card">
-      <h3>Career Building</h3>
-      <p>Career building programs and pre-placement coaching for building career for final year students</p>
+    <div class="service-card" onclick="goToService('project')">
+      Project
     </div>
 
-    <div class="card">
-      <h3>Placement</h3>
-      <p>Placement guidence for final year students.</p>
+    <div class="service-card" onclick="goToService('career')">
+      Career Building
     </div>
 
-    <div class="card">
-      <h3>Sourcing and recruitement</h3>
-      <p>Source and recruitemnt for experienced professionls and working as vendor for top companies.</p>
+    <div class="service-card" onclick="goToService('recruitment')">
+      Sourcing & Recruitment
     </div>
 
-    <div class="card">
-      <h3>Training</h3>
-      <p>Flexible and live interactive sessions.</p>
+    <div class="service-card" onclick="goToService('placement')">
+      Placement
     </div>
+
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Cluster Connect Solutions</p>
-</footer>
+<script>
+  function goToService(type) {
+    window.location.href = "services.html?type=" + type;
+  }
+</script>
 
 </body>
 </html>
