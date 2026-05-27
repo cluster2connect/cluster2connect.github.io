@@ -115,24 +115,35 @@
   const contentEl = document.getElementById("content");
   const btnContainer = document.getElementById("extraBtn");
 
-  if (services[type]) {
-    titleEl.innerText = services[type].title;
-    contentEl.innerText = services[type].content;
+if (services[type]) {
 
-    // 👉 Show button ONLY for trainings
-    if (type === "trainings") {
-      btnContainer.innerHTML = `
-        <button onclick="goToTrainingPage()">
-          Click here for Courses and Trainings
-        </button>
-      `;
-    }
+  titleEl.innerText = services[type].title;
+  contentEl.innerText = services[type].content;
 
-  } else {
-    titleEl.innerText = "Service Not Found";
-    contentEl.innerText = "Please select a valid service.";
+  if (type === "trainings") {
+    btnContainer.innerHTML = `
+      <button onclick="goToTrainingPage()">
+        Click here for Courses and Trainings
+      </button>
+    `;
   }
 
+} else {
+
+  // 👉 DEFAULT VIEW (when no type is selected)
+  titleEl.innerText = "Our Services";
+
+  contentEl.innerHTML = `
+    <ul style="line-height:2;">
+      <li><a href="services.html?type=internship">Internship</a></li>
+      <li><a href="services.html?type=trainings">Trainings</a></li>
+      <li><a href="services.html?type=project">Project</a></li>
+      <li><a href="services.html?type=career">Career Building</a></li>
+      <li><a href="services.html?type=recruitment">Sourcing & Recruitment</a></li>
+      <li><a href="services.html?type=placement">Placement</a></li>
+    </ul>
+  `;
+}
   function goToTrainingPage() {
     window.location.href = "trainings.html";
   }
