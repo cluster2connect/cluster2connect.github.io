@@ -1,109 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Services - Cluster Connect</title>
+  <meta charset="UTF-8">
+  <title>Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #020617;
+      font-family: Arial;
+      background: #0b1220;
       color: white;
+      text-align: center;
     }
 
     header {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      border-bottom: 1px solid #1e293b;
+      background: #0f172a;
+      padding: 15px;
     }
 
-    nav a {
-      color: #cbd5f5;
+    header a {
+      color: white;
       margin: 10px;
       text-decoration: none;
-      font-weight: 500;
     }
 
-    nav a:hover {
+    header a:hover {
       color: #38bdf8;
     }
 
     .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
     h1 {
-      text-align: center;
       color: #38bdf8;
-      margin-bottom: 40px;
       font-size: 36px;
     }
 
-    /* GRID CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #0f172a;
-      padding: 25px;
-      border-radius: 12px;
-      transition: 0.3s;
-      cursor: pointer;
-      border: 1px solid #1e293b;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      background: #1e293b;
-      border-color: #38bdf8;
-    }
-
-    .card h3 {
-      margin: 10px 0;
-      color: #38bdf8;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #cbd5f5;
-    }
-
-    /* DETAIL VIEW */
-    .detail {
-      display: none;
-      max-width: 900px;
+    p {
+      max-width: 700px;
       margin: auto;
-      text-align: left;
+      line-height: 1.6;
     }
 
-    .detail h2 {
-      color: #38bdf8;
-    }
-
-    .back-btn {
-      margin-top: 20px;
+    .btn {
       display: inline-block;
-      color: #38bdf8;
-      cursor: pointer;
-    }
-
-    button {
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 12px 20px;
       background: #38bdf8;
-      border: none;
+      color: black;
       border-radius: 8px;
-      cursor: pointer;
+      text-decoration: none;
       font-weight: bold;
     }
 
-    button:hover {
+    .btn:hover {
       background: #0ea5e9;
     }
   </style>
@@ -112,130 +64,73 @@
 <body>
 
 <header>
-  <h2>Cluster Connect Solutions</h2>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="trainings.html">Trainings</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="trainings.html">Trainings</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
 </header>
 
 <div class="container">
+  <h1 id="service-title"></h1>
+  <p id="service-desc"></p>
 
-  <!-- TITLE -->
-  <h1 id="mainTitle">Our Services</h1>
-
-  <!-- GRID VIEW -->
-  <div id="gridView" class="grid">
-
-    <div class="card" onclick="openService('internship')">
-      <h3>Internship</h3>
-      <p>Get real-world experience with top IT companies</p>
-    </div>
-
-    <div class="card" onclick="openService('trainings')">
-      <h3>Trainings</h3>
-      <p>Learn in-demand tech skills with hands-on projects</p>
-    </div>
-
-    <div class="card" onclick="openService('project')">
-      <h3>Project</h3>
-      <p>Complete final year projects with expert guidance</p>
-    </div>
-
-    <div class="card" onclick="openService('career')">
-      <h3>Career Building</h3>
-      <p>Build strong resumes and crack interviews</p>
-    </div>
-
-    <div class="card" onclick="openService('recruitment')">
-      <h3>Sourcing & Recruitment</h3>
-      <p>Hire and place top talent efficiently</p>
-    </div>
-
-    <div class="card" onclick="openService('placement')">
-      <h3>Placement</h3>
-      <p>Get placed in top companies with confidence</p>
-    </div>
-
-  </div>
-
-  <!-- DETAIL VIEW -->
-  <div id="detailView" class="detail">
-    <h2 id="title"></h2>
-    <p id="content"></p>
-
-    <div id="extraBtn"></div>
-
-    <div class="back-btn" onclick="goBack()">← Back to Services</div>
-  </div>
-
+  <div id="extra"></div>
 </div>
 
 <script>
-  const services = {
+const params = new URLSearchParams(window.location.search);
+const service = params.get("service");
 
-    internship: {
-      title: "Internship",
-      content: "We offer expert guidance to help students secure premium internship opportunities..."
-    },
+const data = {
+  internship: {
+    title: "Internship",
+    desc: "We offer expert guidance to help students secure premium internship opportunities. We provide mentorship, resume building, and interview preparation."
+  },
+  trainings: {
+    title: "Trainings",
+    desc: "Industry-focused training programs in Python, Java, AWS, Azure, DevOps, AI, ML and more.",
+    extra: '<a href="trainings.html" class="btn">Click here for Courses and Trainings</a>'
+  },
+  project: {
+    title: "Project",
+    desc: "Work on real-time industry projects with expert mentorship and hands-on experience."
+  },
+  career: {
+    title: "Career Building",
+    desc: "We guide students with resume building, mock interviews, and career roadmaps."
+  },
+  sourcing: {
+    title: "Sourcing & Recruitment",
+    desc: "We connect companies with top talent through efficient hiring solutions."
+  },
+  placement: {
+    title: "Placement",
+    desc: "We assist students in securing placements with top companies."
+  }
+};
 
-    trainings: {
-      title: "Trainings",
-      content: "We offer comprehensive, industry-aligned training programs to fast-track your tech career..."
-    },
+if (service && data[service]) {
+  document.getElementById("service-title").innerText = data[service].title;
+  document.getElementById("service-desc").innerText = data[service].desc;
 
-    project: {
-      title: "Project",
-      content: "We provide end-to-end guidance for final year projects..."
-    },
-
-    career: {
-      title: "Career Building",
-      content: "We provide a strategic roadmap to build your career..."
-    },
-
-    recruitment: {
-      title: "Sourcing and Recruitment",
-      content: "We provide end-to-end recruitment solutions..."
-    },
-
-    placement: {
-      title: "Placement",
-      content: "We provide placement support to secure your dream job..."
-    }
-  };
-
-  function openService(type) {
-    document.getElementById("gridView").style.display = "none";
-    document.getElementById("detailView").style.display = "block";
-
-    document.getElementById("title").innerText = services[type].title;
-    document.getElementById("content").innerText = services[type].content;
-
-    const btn = document.getElementById("extraBtn");
-
-    if (type === "trainings") {
-      btn.innerHTML = `
-        <button onclick="goToTrainingPage()">
-          Click here for Courses and Trainings
-        </button>
-      `;
-    } else {
-      btn.innerHTML = "";
-    }
+  if (data[service].extra) {
+    document.getElementById("extra").innerHTML = data[service].extra;
   }
 
-  function goBack() {
-    document.getElementById("gridView").style.display = "grid";
-    document.getElementById("detailView").style.display = "none";
-  }
+} else {
+  document.getElementById("service-title").innerText = "Our Services";
 
-  function goToTrainingPage() {
-    window.location.href = "trainings.html";
-  }
+  document.getElementById("service-desc").innerHTML = `
+    <br><br>
+    <a href="services.html?service=internship">Internship</a><br><br>
+    <a href="services.html?service=trainings">Trainings</a><br><br>
+    <a href="services.html?service=project">Project</a><br><br>
+    <a href="services.html?service=career">Career Building</a><br><br>
+    <a href="services.html?service=sourcing">Sourcing & Recruitment</a><br><br>
+    <a href="services.html?service=placement">Placement</a>
+  `;
+}
 </script>
 
 </body>
