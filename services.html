@@ -17,6 +17,13 @@
       text-align: center;
     }
 
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
@@ -25,19 +32,24 @@
 
     h1 {
       color: #38bdf8;
-      margin-bottom: 20px;
     }
 
     p {
       line-height: 1.7;
-      font-size: 16px;
     }
 
-    .back {
-      display: inline-block;
+    button {
       margin-top: 20px;
-      color: #38bdf8;
+      padding: 12px 20px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0ea5e9;
     }
   </style>
 </head>
@@ -46,13 +58,21 @@
 
 <header>
   <h2>Our Services</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="trainings.html">Trainings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <div class="container">
   <h1 id="title"></h1>
   <p id="content"></p>
 
-  <div class="back" onclick="goBack()">← Back to Home</div>
+  <!-- Button container -->
+  <div id="extraBtn"></div>
+
 </div>
 
 <script>
@@ -60,48 +80,62 @@
 
     internship: {
       title: "Internship",
-      content: `We offer expert guidance to help students secure premium internship opportunities. Our structured program successfully bridges the gap between academics and industry demands. We provide personalized mentorship, professional resume building, and interview preparation. Gain a major competitive edge with direct access to our extensive corporate network. We are proudly tied up with multiple top-tier global IT and consulting companies. Explore career-launching pathways with industry leaders like TCS and CTS. Unlock exclusive, high-impact internship roles at multinational majors like Accenture. Connect with innovative, fast-growing tech environments at Hexaware and HCL. Build invaluable real-world experience through our strong collaboration with Wipro. Accelerate your professional journey and land your dream role with our trusted support.`
+      content: `We offer expert guidance to help students secure premium internship opportunities. Our structured program bridges academics and industry demands with mentorship, resume building, and interview preparation.`
     },
 
     trainings: {
       title: "Trainings",
-      content: `We offer comprehensive, industry-aligned training programs to fast-track your tech career. Master in-demand skills through a robust, hands-on, and practical curriculum. Gain expertise in Cloud Computing to navigate modern AWS, Azure, and cloud infrastructure. Build dynamic, full-stack applications with our specialized Web Development track. Develop core programming expertise with our comprehensive Coding bootcamps. Learn Python from scratch for data science, automation, and backend engineering. Master Java to build robust, scalable enterprise-level software solutions. Work on live, real-world projects that simulate actual industry challenges. Learn directly from seasoned tech professionals and expert mentors. Bridge your skill gap and become fully industry-ready for top-tier global employers.`
+      content: `We offer comprehensive, industry-aligned training programs to fast-track your tech career. Learn Python, Java, Cloud, Web Development and more with real-world projects and expert mentors.`
     },
 
     project: {
       title: "Project",
-      content: `We provide comprehensive, end-to-end guidance for college final year projects. Choose from a diverse range of cutting-edge domains aligned with current industry trends. Transform innovative ideas into fully functional, real-world working models. Receive step-by-step mentorship from experienced developers and technical architects. Master the underlying technologies through practical, hands-on development sessions. We assist with complete project documentation, abstract creation, and thesis report writing. Gain thorough preparation to confidently ace project reviews and final viva-voce exams. Learn to implement clean coding standards, robust architecture, and troubleshooting methods. Enhance your resume with a high-impact project that stands out to top recruiters. Turn your mandatory academic requirement into a powerful launchpad for your career.`
+      content: `We provide complete guidance for final year projects with real-world implementation, documentation, and viva preparation.`
     },
 
     career: {
       title: "Career Building",
-      content: `We provide a strategic roadmap to help you design and build a highly successful, long-term career. Identify your unique strengths and map them to the most lucrative industry opportunities. Craft high-impact, ATS-friendly resumes and optimize your LinkedIn profile to stand out. Master behavioral and technical interviews through rigorous, real-time mock interview sessions. Elevate vital corporate soft skills, communication, and professional workplace etiquette. Learn powerful networking strategies to unlock hidden, unadvertised job markets. Benefit from personalized, one-on-one career counseling with seasoned industry veterans. Gain the confidence and strategies needed to successfully navigate salary negotiations. Equip yourself with the mindset and tools required for rapid, continuous career progression. Transform your raw potential into a thriving, future-proof professional journey.`
+      content: `We help you build a strong career with resume building, mock interviews, networking strategies, and career guidance.`
     },
 
     recruitment: {
       title: "Sourcing and Recruitment",
-      content: `Strategic Talent Acquisition: Operating as an authorized third-party recruitment partner dedicated to identifying, attracting, and securing high-caliber human resources. Vendor Empanelment: Serving as an approved staffing partner for global IT giants like TCS, CTS, HCL, and Hexaware. Experienced Professional Focus: Targeting lateral hires. Multi-channel sourcing via LinkedIn and job portals. Rigorous screening ensures quality candidates. SLA compliance maintained. End-to-end recruitment handled efficiently.`
+      content: `We provide end-to-end recruitment solutions including sourcing, screening, and onboarding for top IT companies.`
     },
 
     placement: {
       title: "Placement",
-      content: `We provide comprehensive, result-oriented placement guidance to help you secure your dream job. Access exclusive recruitment drives through our corporate network. Master aptitude and reasoning tests. Build confidence for technical interviews. Prepare for HR rounds. Participate in mock drives. Get company-specific preparation material. Receive job alerts and tracking. Benefit from our strong placement success record. Walk into your graduation with a confirmed offer.`
+      content: `We offer placement support including aptitude training, interview prep, and job referrals to help you secure your dream job.`
     }
   };
 
   const params = new URLSearchParams(window.location.search);
   const type = params.get("type");
 
+  const titleEl = document.getElementById("title");
+  const contentEl = document.getElementById("content");
+  const btnContainer = document.getElementById("extraBtn");
+
   if (services[type]) {
-    document.getElementById("title").innerText = services[type].title;
-    document.getElementById("content").innerText = services[type].content;
+    titleEl.innerText = services[type].title;
+    contentEl.innerText = services[type].content;
+
+    // 👉 Show button ONLY for trainings
+    if (type === "trainings") {
+      btnContainer.innerHTML = `
+        <button onclick="goToTrainingPage()">
+          Click here for Courses and Trainings
+        </button>
+      `;
+    }
+
   } else {
-    document.getElementById("title").innerText = "Service Not Found";
-    document.getElementById("content").innerText = "Please select a valid service.";
+    titleEl.innerText = "Service Not Found";
+    contentEl.innerText = "Please select a valid service.";
   }
 
-  function goBack() {
-    window.location.href = "index.html";
+  function goToTrainingPage() {
+    window.location.href = "trainings.html";
   }
 </script>
 
