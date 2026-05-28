@@ -1,74 +1,134 @@
-body {
+/* RESET */
+* {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f5f7fa;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* NAVBAR */
 header {
-    background: #0a192f;
-    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 50px;
+    background: #0a1f44;
     color: white;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 22px;
+.logo {
+    font-size: 20px;
+    font-weight: bold;
 }
 
-nav a {
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 16px;
 }
 
-nav a:hover {
-    color: #64ffda;
+nav ul li a.active,
+nav ul li a:hover {
+    border-bottom: 2px solid #00c3ff;
 }
 
+/* HERO IMAGE */
 .hero {
-    background: linear-gradient(to right, #0a192f, #172a45);
-    color: white;
-    padding: 80px 50px;
-    text-align: center;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
 }
 
-.container {
-    padding: 40px 60px;
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ABOUT SECTION */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 16px;
+    color: #555;
+}
+
+/* CARDS SECTION */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    margin-bottom: 20px;
+    padding: 20px;
+    width: 250px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
 }
 
-.card h2 {
-    color: #0a192f;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-button {
-    background: #0a192f;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+.card h3 {
+    margin-bottom: 10px;
 }
 
-button:hover {
-    background: #64ffda;
-    color: black;
+.card p {
+    font-size: 14px;
+    color: #666;
 }
 
+/* FOOTER */
 footer {
-    background: #0a192f;
-    color: white;
     text-align: center;
     padding: 15px;
+    background: #0a1f44;
+    color: white;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: 300px;
+    }
 }
