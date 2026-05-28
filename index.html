@@ -1,80 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cluster Connect Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cluster Connect Solutions</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+header {
+    background: #0a192f;
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+nav a {
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #64ffda;
+}
+
+/* HERO IMAGE */
+.hero {
+    height: 80vh;
+    background: url('Education.jpeg') no-repeat center center/cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    padding-bottom: 40px;
+}
+
+.hero-text {
+    background: rgba(255,255,255,0.7);
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.hero-text h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #0a192f;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.hero-text p {
+    font-size: 18px;
+}
+
+/* SECTION */
+.section {
+    text-align: center;
+    padding: 50px;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.section p {
+    color: #555;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #0a192f;
+}
+
+/* FOOTER */
+footer {
+    background: #0a192f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="logo">Cluster Connect Solutions</div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="trainings.html">Trainings</a></li>
-                <li><a href="placement.html">Placement</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Cluster Connect Solutions</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="services.html">Services</a>
+        <a href="trainings.html">Trainings</a>
+        <a href="placement.html">Placement</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    <!-- HERO IMAGE (ONLY IMAGE - NO TEXT) -->
-    <section class="hero">
-        <img src="images/hero.jpg" alt="Hero Image">
-    </section>
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="hero-text">
+        <h2>Bridging the Gap Between</h2>
+        <h1>Education and IT Excellence</h1>
+        <p>Through Internship-Driven Learning</p>
+    </div>
+</div>
 
-    <!-- ABOUT SECTION -->
-    <section class="about">
-        <h1>Welcome to Cluster Connect Solutions</h1>
-        <p>
-            We are a dynamic technology ecosystem dedicated to bridging the gap between academic learning and industry execution.
-            Our mission is to deliver cutting-edge IT solutions and empower the next generation of tech professionals through
-            training, internships, and project guidance.
-        </p>
-    </section>
+<!-- CONTENT -->
+<div class="section">
+    <h2>Welcome to Cluster Connect Solutions</h2>
+    <p>
+    We are a dynamic technology ecosystem dedicated to bridging the gap between academic learning and industry execution.
+    Our mission is to deliver cutting-edge IT solutions and empower the next generation of tech professionals.
+    </p>
+</div>
 
-    <!-- SERVICES CARDS -->
-    <section class="cards">
+<!-- FEATURES -->
+<div class="cards">
 
-        <div class="card">
-            <h3>Custom IT Services</h3>
-            <p>
-                Reliable, scalable, and modern IT solutions tailored to business needs including software,
-                web applications, and cloud services.
-            </p>
-        </div>
+<div class="card">
+    <h3>💻 Custom IT Services</h3>
+    <p>Reliable, scalable and modern IT solutions tailored to your business.</p>
+</div>
 
-        <div class="card">
-            <h3>Industry-Aligned Training</h3>
-            <p>
-                Hands-on training programs in high-demand technologies guided by experienced professionals.
-            </p>
-        </div>
+<div class="card">
+    <h3>🎓 Industry Training</h3>
+    <p>Hands-on training by experienced industry professionals.</p>
+</div>
 
-        <div class="card">
-            <h3>Experiential Internships</h3>
-            <p>
-                Real-world project exposure helping students gain practical knowledge and corporate experience.
-            </p>
-        </div>
+<div class="card">
+    <h3>👨‍💼 Internships</h3>
+    <p>Real-world exposure to build corporate experience.</p>
+</div>
 
-        <div class="card">
-            <h3>Project Guidance</h3>
-            <p>
-                End-to-end support for academic projects from idea to deployment with full understanding.
-            </p>
-        </div>
+<div class="card">
+    <h3>📄 Project Guidance</h3>
+    <p>End-to-end support for college projects.</p>
+</div>
 
-    </section>
+</div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Cluster Connect Solutions. All rights reserved.</p>
-    </footer>
+<footer>
+© 2026 Cluster Connect Solutions
+</footer>
 
 </body>
 </html>
