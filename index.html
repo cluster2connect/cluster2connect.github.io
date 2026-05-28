@@ -1,186 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cluster Connect Solutions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluster Connect Solutions</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-/* NAVBAR */
-header {
-    background: #0a192f;
-    color: white;
-    padding: 15px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 20px;
-    margin: 0;
-}
-
-nav a {
-    color: #ccc;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: #64ffda;
-}
-
-/* HERO IMAGE */
-.hero {
-    height: 80vh;
-    background: url('Education.jpeg') no-repeat center center/cover;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: center;
-    color: black;
-    padding-bottom: 40px;
-}
-
-.hero-text {
-    background: rgba(255,255,255,0.7);
-    padding: 20px 30px;
-    border-radius: 10px;
-}
-
-.hero-text h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #0a192f;
-}
-
-.hero-text h1 {
-    font-size: 40px;
-    margin: 10px 0;
-}
-
-.hero-text p {
-    font-size: 18px;
-}
-
-/* SECTION */
-.section {
-    text-align: center;
-    padding: 50px;
-}
-
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.section p {
-    color: #555;
-}
-
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 20px;
-    padding: 40px;
-}
-
-.card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    color: #0a192f;
-}
-
-/* FOOTER */
-footer {
-    background: #0a192f;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-</style>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header>
-    <h1>Cluster Connect Solutions</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="services.html">Services</a>
-        <a href="trainings.html">Trainings</a>
-        <a href="placement.html">Placement</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🔗</span>
+            Cluster Connect Solutions
+        </div>
 
-<!-- HERO SECTION -->
-<div class="hero">
-    <div class="hero-text">
-        <h2>Bridging the Gap Between</h2>
-        <h1>Education and IT Excellence</h1>
-        <p>Through Internship-Driven Learning</p>
-    </div>
-</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Trainings</a></li>
+                <li><a href="#">Placement</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- CONTENT -->
-<div class="section">
-    <h2>Welcome to Cluster Connect Solutions</h2>
-    <p>
-    We are a dynamic technology ecosystem dedicated to bridging the gap between academic learning and industry execution.
-    Our mission is to deliver cutting-edge IT solutions and empower the next generation of tech professionals.
-    </p>
-</div>
+    <!-- HERO IMAGE -->
+    <section class="hero">
+        <img src="images/hero.png" alt="Hero Image">
+    </section>
 
-<!-- FEATURES -->
-<div class="cards">
+    <!-- WELCOME SECTION -->
+    <section class="welcome">
+        <h1>Welcome to Cluster Connect Solutions</h1>
+        <div class="underline"></div>
+        <p>
+            We are a dynamic technology ecosystem dedicated to bridging the gap between academic learning and industry execution.
+            Our mission is to deliver cutting-edge IT solutions and empower the next generation of tech professionals
+            through training, internships, and project guidance.
+        </p>
+    </section>
 
-<div class="card">
-    <h3>💻 Custom IT Services</h3>
-    <p>Reliable, scalable and modern IT solutions tailored to your business.</p>
-</div>
+    <!-- CARDS -->
+    <section class="cards">
 
-<div class="card">
-    <h3>🎓 Industry Training</h3>
-    <p>Hands-on training by experienced industry professionals.</p>
-</div>
+        <div class="card">
+            <div class="icon blue">💻</div>
+            <h3>Custom IT Services</h3>
+            <p>
+                Reliable, scalable and modern IT solutions tailored to your business needs.
+            </p>
+        </div>
 
-<div class="card">
-    <h3>👨‍💼 Internships</h3>
-    <p>Real-world exposure to build corporate experience.</p>
-</div>
+        <div class="card">
+            <div class="icon purple">🎓</div>
+            <h3>Industry-Aligned Training</h3>
+            <p>
+                Hands-on training in emerging technologies guided by industry experts.
+            </p>
+        </div>
 
-<div class="card">
-    <h3>📄 Project Guidance</h3>
-    <p>End-to-end support for college projects.</p>
-</div>
+        <div class="card">
+            <div class="icon teal">👨‍💼</div>
+            <h3>Experiential Internships</h3>
+            <p>
+                Real-world project exposure to build skills and corporate experience.
+            </p>
+        </div>
 
-</div>
+        <div class="card">
+            <div class="icon orange">📄</div>
+            <h3>Project Guidance</h3>
+            <p>
+                End-to-end support for college projects from concept to deployment.
+            </p>
+        </div>
 
-<footer>
-© 2026 Cluster Connect Solutions
-</footer>
+    </section>
 
 </body>
 </html>
