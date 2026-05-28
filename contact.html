@@ -10,6 +10,7 @@
 <style>
     /* Contact Form Styling */
     .card form input,
+    .card form textarea,
     .card form button {
         width: 100%;
         padding: 12px;
@@ -19,9 +20,15 @@
         font-size: 14px;
     }
 
-    .card form input:focus {
+    .card form input:focus,
+    .card form textarea:focus {
         outline: none;
         border-color: #0a192f;
+    }
+
+    .card form textarea {
+        resize: none;
+        height: 100px;
     }
 
     .card form button {
@@ -81,6 +88,9 @@
 
         <label>Phone:</label><br>
         <input type="tel" name="phone" placeholder="Enter your phone number" required><br><br>
+
+        <label>Message (Optional):</label><br>
+        <textarea name="message" placeholder="Tell us which service you're interested in (Training, Internship, Placement, etc.)"></textarea><br><br>
 
         <button type="submit">Submit</button>
 
