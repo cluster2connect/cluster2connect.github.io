@@ -1,14 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Trainings</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trainings - Cluster Connect Solutions</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+header {
+    background: #0a192f;
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #64ffda;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    padding: 40px;
+}
+
+.title h1 {
+    color: #0a192f;
+}
+
+/* GRID */
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    color: #0a192f;
+}
+
+.level {
+    font-size: 13px;
+    color: #64ffda;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* CATEGORY */
+.category {
+    padding: 20px 40px;
+    font-size: 22px;
+    color: #0a192f;
+    font-weight: bold;
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
-    <h1>Cluster Connect Solutions</h1>
+    <h2>Cluster Connect Solutions</h2>
     <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -18,32 +102,138 @@
     </nav>
 </header>
 
-<div class="hero">
-    <h2>Training Programs</h2>
+<div class="title">
+    <h1>Our Training Programs</h1>
+    <p>Industry-focused courses designed to make you job-ready</p>
 </div>
 
-<div class="container">
+<!-- PROGRAMMING -->
+<div class="category">Programming Courses</div>
+<div class="courses">
 
 <div class="card">
-<h2>Cloud Computing</h2>
-<p>AWS, Azure, GCP with real-time projects.</p>
+<h3>Python Training</h3>
+<div class="level">Beginner to Advanced</div>
+<p>Learn Python from basics to advanced concepts including OOP, file handling, APIs, and automation.</p>
+<p><b>Topics:</b> Variables, Loops, Functions, OOP, Django, REST APIs</p>
 </div>
 
 <div class="card">
-<h2>Full Stack Development</h2>
-<p>Java, Angular, React with live applications.</p>
+<h3>Java Training</h3>
+<div class="level">Beginner to Advanced</div>
+<p>Master Java programming with real-time projects and backend development skills.</p>
+<p><b>Topics:</b> Core Java, JDBC, Servlets, Spring Boot</p>
+</div>
+
+</div>
+
+<!-- CLOUD -->
+<div class="category">Cloud & DevOps</div>
+<div class="courses">
+
+<div class="card">
+<h3>AWS Training</h3>
+<div class="level">Beginner</div>
+<p>Learn Amazon Web Services and become a cloud professional.</p>
+<p><b>Topics:</b> EC2, S3, Lambda, IAM, Cloud Architecture</p>
 </div>
 
 <div class="card">
-<h2>High Performance Coding</h2>
-<p>Python & Golang for backend and microservices.</p>
+<h3>Azure Training</h3>
+<div class="level">Beginner</div>
+<p>Build cloud applications using Microsoft Azure platform.</p>
+<p><b>Topics:</b> Virtual Machines, Storage, Networking</p>
+</div>
+
+<div class="card">
+<h3>DevOps Training</h3>
+<div class="level">Intermediate</div>
+<p>Master DevOps tools and CI/CD pipelines.</p>
+<p><b>Topics:</b> Docker, Kubernetes, Jenkins, Git</p>
+</div>
+
+<div class="card">
+<h3>GCP Training</h3>
+<div class="level">Beginner</div>
+<p>Learn Google Cloud Platform services and deployment.</p>
+<p><b>Topics:</b> Compute Engine, App Engine, BigQuery</p>
 </div>
 
 </div>
 
-<footer>
-© 2026 Cluster Connect Solutions
-</footer>
+<!-- WEB -->
+<div class="category">Web Development</div>
+<div class="courses">
+
+<div class="card">
+<h3>Full Stack Development</h3>
+<div class="level">Beginner to Advanced</div>
+<p>Become a complete web developer with frontend and backend skills.</p>
+<p><b>Topics:</b> HTML, CSS, JS, Node.js, MongoDB</p>
+</div>
+
+<div class="card">
+<h3>React JS</h3>
+<div class="level">Intermediate</div>
+<p>Build dynamic user interfaces using React.</p>
+<p><b>Topics:</b> Components, Hooks, Routing, APIs</p>
+</div>
+
+<div class="card">
+<h3>Angular</h3>
+<div class="level">Intermediate</div>
+<p>Create enterprise web applications using Angular framework.</p>
+<p><b>Topics:</b> TypeScript, Components, Services</p>
+</div>
+
+</div>
+
+<!-- DATA -->
+<div class="category">Data & AI</div>
+<div class="courses">
+
+<div class="card">
+<h3>Data Science</h3>
+<div class="level">Advanced</div>
+<p>Analyze data and build predictive models.</p>
+<p><b>Topics:</b> Python, Pandas, ML Algorithms</p>
+</div>
+
+<div class="card">
+<h3>Machine Learning</h3>
+<div class="level">Advanced</div>
+<p>Learn ML algorithms and real-world implementation.</p>
+<p><b>Topics:</b> Regression, Classification, NLP</p>
+</div>
+
+<div class="card">
+<h3>Artificial Intelligence</h3>
+<div class="level">Advanced</div>
+<p>Explore AI concepts and intelligent systems.</p>
+<p><b>Topics:</b> Neural Networks, Deep Learning</p>
+</div>
+
+</div>
+
+<!-- OTHER -->
+<div class="category">Other Courses</div>
+<div class="courses">
+
+<div class="card">
+<h3>Software Testing</h3>
+<div class="level">Beginner</div>
+<p>Learn manual and automation testing techniques.</p>
+<p><b>Topics:</b> Selenium, Test Cases, Automation</p>
+</div>
+
+<div class="card">
+<h3>Digital Marketing</h3>
+<div class="level">Beginner</div>
+<p>Master online marketing strategies.</p>
+<p><b>Topics:</b> SEO, SEM, Social Media Marketing</p>
+</div>
+
+</div>
 
 </body>
 </html>
